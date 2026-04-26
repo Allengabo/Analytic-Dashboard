@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YANKICKS - Analytics Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="logo">YANKICKS</div>
+  <nav class="nav">
+    <a href="#">Overview</a>
+    <a href="#">Manage Users</a>
+    <a href="#">Manage Products</a>
+    <a href="#">Manage Orders</a>
+    <a href="#" class="active">Analytics</a>
+  </nav>
+  <div class="signout">Sign Out</div>
+</aside>
+
+<main class="main">
+  <h1 class="page-title">Analytics Dashboard</h1>
+  <p class="page-subtitle">Comprehensive store performance and insights.</p>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">1</span>
+      <h2 class="section-title">Descriptive</h2>
+    </div>
+    <p class="section-desc">What happened? Historical performance metrics.</p>
+
+    <div class="grid grid-4">
+      <div class="card">
+        <p class="kpi-label">Total Revenue</p>
+        <p class="kpi-value">&#8369;302,400</p>
+      </div>
+      <div class="card">
+        <p class="kpi-label">Conversion Rate</p>
+        <p class="kpi-value">3.2%</p>
+      </div>
+      <div class="card">
+        <p class="kpi-label">Avg Order Value</p>
+        <p class="kpi-value">&#8369;7,375</p>
+      </div>
+      <div class="card">
+        <p class="kpi-label">Repeat Customer</p>
+        <p class="kpi-value">41.5%</p>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:24px;">
+      <div class="card card-lg">
+        <h3 class="card-title">Revenue Over Time</h3>
+        <div class="chart-box"><canvas id="revenueChart"></canvas></div>
+      </div>
+      <div class="card card-lg">
+        <h3 class="card-title">Top Selling Products</h3>
+        <div class="chart-box"><canvas id="topProductsChart"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">2</span>
+      <h2 class="section-title">Diagnostic</h2>
+    </div>
+    <p class="section-desc">Why did it happen? Drill-down into behaviors.</p>
+
+    <div class="grid grid-2">
+      <div class="card card-lg">
+        <h3 class="card-title">Cart Abandonment Funnel</h3>
+        <div class="chart-box"><canvas id="funnelChart"></canvas></div>
+      </div>
+      <div class="card card-lg">
+        <h3 class="card-title">Refund Reasons</h3>
+        <div class="chart-box"><canvas id="refundChart"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">3</span>
+      <h2 class="section-title">Predictive</h2>
+    </div>
+    <p class="section-desc">What will happen? Forecasts and trends.</p>
+
+    <div class="grid grid-3-2-1">
+      <div class="card card-lg">
+        <h3 class="card-title">3-Month Revenue Forecast</h3>
+        <div class="chart-box"><canvas id="forecastChart"></canvas></div>
+      </div>
+      <div class="card card-lg">
+        <h3 class="card-title">Expected Stock-Outs</h3>
+        <div id="stockoutList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">4</span>
+      <h2 class="section-title">Prescriptive</h2>
+    </div>
+    <p class="section-desc">What should we do? Actionable recommendations.</p>
+
+    <div class="grid grid-4" id="recsGrid"></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
